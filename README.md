@@ -43,9 +43,9 @@ Rotary encoder extended with M2F cables due to the pins direction pointing the r
 - `keys.py` manages credantials and feed information
   
 - `lib folder` containing:
-- - `rotary_irq_rp2.py` mages credantials
-- - `rotary.py` mages credantials
-- - `ssd1306.py` mages credantials 
+- - `rotary_irq_rp2.py` driver helping reading the rotary encoder.
+- - `rotary.py` main rotary driver
+- - `ssd1306.py` driver for controling the OLED display
 
 ```
 def calculate(T, Y):
