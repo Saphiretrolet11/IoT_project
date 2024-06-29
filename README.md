@@ -36,12 +36,16 @@ Rotary encoder extended with M2F cables due to the pins direction pointing the r
 
 ## Code
 
-- `boot.py` deals with Wi-Fi connection.
-- `main.py` handles sensor readings, calculations and sends data
-- `mqtt.py` 
-- `wifiConnection` 
-- `keys.py` mages credantials
-- - `lib` mages credantials 
+- `boot.py` can be empty for this project
+- `main.py` handles sensor readings, calculations and sends data.
+- `mqtt.py` [MQTT library](https://github.com/MartinKarlsson1337/iot-bike/blob/main/lib/mqtt.py) used for the communication between devices.
+- `wifiConnection` [Wi-Fi Connection](https://github.com/iot-lnu/pico-w/blob/main/network-examples/N2_WiFi_MQTT_Webhook_Adafruit/lib/wifiConnection.py) connects to Wi-Fi.
+- `keys.py` manages credantials and feed information
+  
+- `lib folder` containing:
+- - `rotary_irq_rp2.py` mages credantials
+- - `rotary.py` mages credantials
+- - `ssd1306.py` mages credantials 
 
 ```
 def calculate(T, Y):
