@@ -36,6 +36,13 @@ Rotary encoder extended with M2F cables due to the pins direction pointing the r
 
 ## Code
 
+- `boot.py` deals with Wi-Fi connection.
+- `main.py` handles sensor readings, calculations and sends data
+- `mqtt.py` 
+- `wifiConnection` 
+- `keys.py` mages credantials
+- - `lib` mages credantials 
+
 ```
 def calculate(T, Y):
     Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
