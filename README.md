@@ -36,7 +36,7 @@ Rotary encoder extended with M2F cables due to the pins direction pointing the r
 
 ## Code
 
-...
+```
 def calculate(T, Y):
     Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
     calc_min  = T / (Y * 2)   # The formula T / (Y / 100 * 2) to calc minutes
@@ -46,10 +46,9 @@ def calculate(T, Y):
 T = adjusted_val # The time based on temperature
 Y = r.value() # The rotary encoder value for setting yeast ammount
 calc_result = calculate(T, Y)
-...
+```
 qweqwe
-...
-# Display function show selected yeast and temp/humid
+```
 def update_display(r, display):
     temp_val,humidity_val = read_temp() #Get temperature and humidity from sensor
     display.fill(0)
@@ -60,10 +59,10 @@ def update_display(r, display):
     display.show()  # Refresh the display
 
 update_display(r, display)
-...
+```
 qweqweqw
 
-...
+```
 def temp_time (temprature_min):
     if temprature_min < 0:
         value = 1
@@ -82,10 +81,10 @@ def temp_time (temprature_min):
 current_temp = temprature
 # current_temp = 2
 adjusted_val = temp_time(current_temp)
-...
+```
 qweqwe
 
-
+# Display function show selected yeast and temp/humid
 
 ## Transmitting data/connectivity
 
