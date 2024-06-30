@@ -31,7 +31,7 @@ Materials used during the project:
 | <img src="images/BATTERY.png"  height="150">    | Powerbank    | [Link](https://www.webhallen.com/se/product/339699-Belkin-BoostCharge-10-000mAh-Powerbank-2-x-USB-A-1-x-USB-C-Svart)                                | 199         |
 ## Computer Setup
 
-1. ### Flash the Raspberry Pi Pico WH.
+ ### 1. Flash the Raspberry Pi Pico WH.
    - Make sure your Raspberry Pi Pico WH is not connected to your computer.
    - Download the MicroPython firmware (.uf2 file) for Raspberry Pi Pico from !!LINK.
    - Hold down the BOOTSEL button on your Raspberry Pi Pico WH.
@@ -40,7 +40,7 @@ Materials used during the project:
    - Place the firmware you downloaded (.uf2 file) in the Raspberry Pi Pico WH .
    - The device should disconnect and not reappear as a storage device.
 
-2. ### Install IDE and Extensions.
+ ### 2. Install IDE and Extensions.
    - Install [Node.js](https://nodejs.org/en/download/package-manager/current)
    - Install [VScode](https://code.visualstudio.com/download)
    - Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
@@ -52,7 +52,7 @@ Materials used during the project:
    - Go back to the Pymakr extension, click on “add devices”, and select your device .
    - You are now ready to begin!.
 
-2. ### Download necessary Drivers.
+ ### 3. Download necessary Drivers.
    - You will need 3 drivers to properly use the Rotary encoder and OLED. 
    - Inside your project folder create a folder named exactly “lib”. 
    - Download [rotary_irq_rp2.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary_irq_rp2.py)
@@ -62,7 +62,6 @@ Materials used during the project:
    - You now have all the prerequisite steps and can start assembly!
 
 
-## C
 ## Putting everything together
 
 ![My diagram design](images/DIAGRAM.png)
