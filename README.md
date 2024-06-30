@@ -34,7 +34,7 @@ Materials used during the project:
 ## Computer Setup
 
 
-1. **Flash the MicroPython firmware onto the Raspberry Pi Pico WH.**
+1. ### Flash the Raspberry Pi Pico WH.
    - Make sure your Raspberry Pi Pico WH is not connected to your computer.
    - Download the MicroPython firmware (.uf2 file) for Raspberry Pi Pico from !!LINK.
    - Hold down the BOOTSEL button on your Raspberry Pi Pico WH.
@@ -43,25 +43,26 @@ Materials used during the project:
    - Place the firmware you downloaded (.uf2 file) in the Raspberry Pi Pico WH .
    - The device should disconnect and not reappear as a storage device.
 
+2. ### Install IDE and Extensions.
+   - Install VScode !!LINK.
+   - Install Node.js !!LINK.
+   - Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
+   - The Pymakr extension should now be on the left bar, go to it and click on create project.
+   - Create a folder (you can name it whatever) and click use this folder.
+   - A window will ask for a project name (you can name it whatever you want).
+   - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
+   - Go back to the Pymakr extension, click on “add devices”, and select your device .
+   - You are now ready to begin!.
 
-Install VScode !!LINK.
-Install Node.js !!LINK.
-Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
-The Pymakr extension should now be on the left bar, go to it and click on create project.
-Create a folder (you can name it whatever) and click use this folder.
-A window will ask for a project name (you can name it whatever you want).
-Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
-Go back to the Pymakr extension, click on “add devices”, and select your device .
-You are now ready to begin!.
 
-
-
-You will need 3 drivers to properly use the Rotary encoder and OLED 
-Inside your project folder create a folder named exactly “lib” 
-Download rotary_irq_rp2 !!LINK
-Download rotary.py !!LINK
-Download ssd1306.py !!LINK
-You now have all the prerequisite steps and can start assembly!
+2. ### Download necessary Drivers.
+   - You will need 3 drivers to properly use the Rotary encoder and OLED. 
+   - Inside your project folder create a folder named exactly “lib”. 
+   - Download rotary_irq_rp2 !!LINK
+   - Download rotary.py !!LINK
+   - Download ssd1306.py !!LINK
+   - Place the downloaded files in the lib folder.
+   - You now have all the prerequisite steps and can start assembly!
 
 
 ## C
