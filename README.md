@@ -247,7 +247,9 @@ The data is published to Adafruit and saved every 20 seconds while the device is
   <img src="images/IMOBIL.png"  height="150" >
 </p>
 
-
+Message on Discord both on PC and Mobile
+<p>
+</p>
 ## Finalizing The Design
 
 This was my first foray into IoT, and I consider this project more of a learning tool rather than something I'm going to use daily, but it was fun to work with a topic I enjoy. I have created something that, with more work, could be genuinely useful. I've gained a lot of knowledge around circuitry and this was my first time using python which i've come to appreciate (atleast over java). 
