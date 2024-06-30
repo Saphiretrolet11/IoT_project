@@ -202,6 +202,9 @@ def update_display(r, display):
 
 update_display(r, display)
 ```
+
+![Device in use](images/SHOWGIF.gif)
+
 Function displays all information on the OLED its quite standard calling other functions to get new information displaying that information and updating. 
 
 I decided to make a last minute edition that who the conversion rate between fresh yeast and dry yeast so if you're baking with dry yeast you don't have to do any math a fresh cube weights 50g and a packet of dry 12g 50/12 is around 4.2, 50/4.2 is going to create a lot of decimals och i used the round function to keep it to whole numbers.
@@ -271,4 +274,3 @@ The major upgrades i would do in the future is:
 
 ![Device in use](images/IBRUK.jpg)
 
-![Device in use](images/SHOWGIF.gif)
