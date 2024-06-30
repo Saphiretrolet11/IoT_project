@@ -66,9 +66,8 @@ Materials used during the project:
 
 ![Final design diagram](images/DIAGRAM.png)
 
-The DHT11 sensor is extended with M2F cables so it can be placed inside the proofing bowl while the rest of the device is outside protecting it form the damp and potential dough that could damage it
-
-Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use
+The DHT11 sensor is extended with M2F cables so it can be placed inside the proofing bowl while the rest of the device is outside protecting it form the damp and potential dough that could damage it.
+Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use. But i can arrange components however aslong as thet are correctly wired.
 
 ## platform
 
