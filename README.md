@@ -251,7 +251,9 @@ The data is published to Adafruit and saved every 20 seconds while the device is
   <img src="images/IMOBIL.png"  height="150" >
 </p>
 
-Message on Discord both on PC and Mobile
+<p align="center">
+  Message on Discord both on PC and Mobile
+</p>
 <p>
   <br>
  </br>
