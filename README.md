@@ -2,6 +2,8 @@ Gustav Helgesson Liljedal gh222nq (2024)
 
 # Proofing Time A Bakers Assistant
 
+![Device in use](images/IBRUK2.jpg)
+
 This is a tutorial on how to build a baking assistant where the user can see temperature and humidity, they can also tell the device how much yeast they used in their dough to get a recommended proofing time. 
 
 The temperature and humidity is monitored by a DHT11 sensor and a rotary encoder is used to assign the yeast amount. An OLED screen will in real time present the temperature, humidity and yeast amount in grams with conversion for both fresh and dry yeast. The software will calculate a recommended proofing time and publish information to Adafruit through a MQTT protocol where the information is presented on a dashboard and the user is sent a message through discord.
@@ -133,6 +135,7 @@ Here we establish our connection with the connected devices though reading the s
 The max value was set to 50 as a standard yeast cube is 50 grams and I personally never bake batches larger than one yeast cube. It should be noted that the way later calculations are done, increasing the max value beyond 50 would break how it works and a new way of calculating would need to be developed.
 
 
+
 ```
 def temp_time (temprature_min):
     if temprature_min < 0:
@@ -241,6 +244,7 @@ The data is published to Adafruit and saved every 20 seconds while the device is
 
 <p align="center">
   <img src="images/MSG.png" >
+  <img src="images/IMOBIL.jpg" >
 </p>
 
 
@@ -254,4 +258,6 @@ The major upgrades i would do in the future is:
  - Change cloud service to something that allows for more UI customization.
  - The set of calulations to get a recomended proof time would be changed so it can handle different scales.
 
-#Bild i bruk
+![Device in use](images/IBRUK.jpg)
+
+![Device in use](images/SHOWGIF.gif)
