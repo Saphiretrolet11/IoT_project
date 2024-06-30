@@ -70,7 +70,10 @@ Rotary encoder extended with M2F cables due to the pins direction pointing the r
 
 ## platform
 
-I decided to use [Adafruit IO](https://learn.adafruit.com/adafruit-io-basics-feeds), it’s a free and simple cloud service. The reason for choosing it was that I wanted to send myself the recommended proof time and I noticed that sending a webhook message through Adafruit was a feature, it also seemed to have quite a simple but easy to use statistical presentation. In hindsight I would have liked to try Ubidots instead as while it looks a bit more complex it also seems to have better customisation, something I felt Adafruit was lacking as I could not get my dashboard to look especially appealing. In future I might move to Ubidots but I would have to change my current MQTT based protocol to an API for data transfer.
+I decided to use [Adafruit IO](https://io.adafruit.com/), it’s a free and simple cloud service. The reason for choosing it was that I wanted to send myself the recommended proof time and I noticed that sending a webhook message through Adafruit was a feature, it also seemed to have quite a simple but easy to use statistical presentation. To learn more about Adafruit set-up
+you can press [here](https://learn.adafruit.com/adafruit-io-basics-feeds).
+
+In hindsight I would have liked to try Ubidots instead as while it looks a bit more complex it also seems to have better customisation, something I felt Adafruit was lacking as I could not get my dashboard to look especially appealing. In future I might move to Ubidots but I would have to change my current MQTT based protocol to an API for data transfer.
 
 ## Code
 
