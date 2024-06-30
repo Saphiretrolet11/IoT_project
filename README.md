@@ -35,13 +35,13 @@ Materials used during the project:
 
 
 ### 1. Updating Hardware
-- - Make sure your Raspberry Pi Pico WH is not connected to your computer.
-- - Download the MicroPython firmware (.uf2 file) for Raspberry Pi Pico from !!LINK.
-- - Hold down the BOOTSEL button on your Raspberry Pi Pico WH.
-- - While holding BOOTSEL, connect the Pico Wh to your computer with a USB cable.
-- - The Raspberry Pi Pico WH will appear as a storage device on your computer.
-- - Place the firmware you downloaded (.uf2 file) in the Raspberry Pi Pico WH .
-- - The device should disconnect and not reappear as a storage device.
+  - Make sure your Raspberry Pi Pico WH is not connected to your computer.
+  - Download the MicroPython firmware (.uf2 file) for Raspberry Pi Pico from !!LINK.
+  - Hold down the BOOTSEL button on your Raspberry Pi Pico WH.
+  - While holding BOOTSEL, connect the Pico Wh to your computer with a USB cable.
+  - The Raspberry Pi Pico WH will appear as a storage device on your computer.
+  - Place the firmware you downloaded (.uf2 file) in the Raspberry Pi Pico WH .
+  - The device should disconnect and not reappear as a storage device.
 
 
 Install VScode !!LINK.
