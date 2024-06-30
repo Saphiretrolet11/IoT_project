@@ -45,6 +45,7 @@ Materials used during the project:
    - Install [VScode](https://code.visualstudio.com/download)
    - Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
    - The Pymakr extension should now be on the left bar, go to it and click on create project.
+     ![pymaker position](images/PYMAKR.png)
    - Create a folder (you can name it whatever) and click use this folder.
    - A window will ask for a project name (you can name it whatever you want).
    - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
@@ -64,7 +65,7 @@ Materials used during the project:
 ## C
 ## Putting everything together
 
-![Final design diagram](images/DIAGRAM.png)
+![My diagram design](images/DIAGRAM.png)
 
 The DHT11 sensor is extended with M2F cables so it can be placed inside the proofing bowl while the rest of the device is outside protecting it form the damp and potential dough that could damage it.
 Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use. But i can arrange components however aslong as thet are correctly wired.
