@@ -29,6 +29,9 @@ Materials used during the project:
 | <img src="images/M2F.jpg" width="150">    | Jumper Wire Male to Female    | [Link](https://www.electrokit.com/labbsladd-20-pin-15cm-hona/hane)                                | 29         |
 | <img src="images/USB.png"  height="150">    | USB-cable  Male to Female    | [Link](https://www.electrokit.com/usb-kabel-a-hane-micro-b-5p-hane-1.8m)                                | 39         |
 | <img src="images/BATTERY.png"  height="150">    | Powerbank    | [Link](https://www.webhallen.com/se/product/339699-Belkin-BoostCharge-10-000mAh-Powerbank-2-x-USB-A-1-x-USB-C-Svart)                                | 199         |
+
+You don't necessarily need a power bank, this is to power the device while it is in the kitchen.
+
 ## Computer Setup
 
  ### 1. Flash the Raspberry Pi Pico WH.
