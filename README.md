@@ -242,6 +242,8 @@ The temperature and humidity data from the DHT11 is displayed on an OLED screen 
 The data is published to Adafruit and saved every 20 seconds while the device is powered, each feed stores data for 30 days. The feeds supply a line graph, a gauge, an info stream and a regular text box to present the user with data. Adafruit salso sends 2 messages through webhooks to discord.
 
 <p>
+  <br>
+ </br>
 </p>
 
 <p align="center">
@@ -251,6 +253,8 @@ The data is published to Adafruit and saved every 20 seconds while the device is
 
 Message on Discord both on PC and Mobile
 <p>
+  <br>
+ </br>
 </p>
 
 ## Finalizing The Design
