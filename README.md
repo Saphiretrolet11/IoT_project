@@ -241,6 +241,8 @@ LoRaWAN could be interesting to use as it requires less power and a much further
 The temperature and humidity data from the DHT11 is displayed on an OLED screen together with the user's selected yeast amount. This data is updated every 1 second. This loop felt like a good middle point where it didn't feel unnecessarily fast while still working well with using the rotary encoder to choose a yeast value.
 The data is published to Adafruit and saved every 20 seconds while the device is powered, each feed stores data for 30 days. The feeds supply a line graph, a gauge, an info stream and a regular text box to present the user with data. Adafruit salso sends 2 messages through webhooks to discord.
 
+<p>
+</p>
 
 <p align="center">
   <img src="images/MSG.png" height="150" >
@@ -250,6 +252,7 @@ The data is published to Adafruit and saved every 20 seconds while the device is
 Message on Discord both on PC and Mobile
 <p>
 </p>
+
 ## Finalizing The Design
 
 This was my first foray into IoT, and I consider this project more of a learning tool rather than something I'm going to use daily, but it was fun to work with a topic I enjoy. I have created something that, with more work, could be genuinely useful. I've gained a lot of knowledge around circuitry and this was my first time using python which i've come to appreciate (atleast over java). 
