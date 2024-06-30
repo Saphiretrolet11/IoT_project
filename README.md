@@ -3,18 +3,16 @@ Gustav Helgesson Liljedal gh222nq
 # IoT_project
 IoT_project
 
-This is a tutorial on how to build a baking assistant where the user can see temperature and humidity, they can also tell the device how much yeast they used in their dough to get a recommended proofing time. The temperature and humidity is monitored by a DHT11 sensor and a rotary encoder is used to assign the yeast amount. An OLED screen will in real time present the temperature, humidity and yeast amount in grams with conversion for both fresh and dry yeast. The software will calculate a recommended proofing time and publish information to Adafruit through a MQTT protocol where the information is presented on a dashboard and the user is sent a message through discord.
+This is a tutorial on how to build a baking assistant where the user can see temperature and humidity, they can also tell the device how much yeast they used in their dough to get a recommended proofing time. 
+The temperature and humidity is monitored by a DHT11 sensor and a rotary encoder is used to assign the yeast amount. An OLED screen will in real time present the temperature, humidity and yeast amount in grams with conversion for both fresh and dry yeast. The software will calculate a recommended proofing time and publish information to Adafruit through a MQTT protocol where the information is presented on a dashboard and the user is sent a message through discord.
 
 The time to create this project is probably around 8-12 hours depending on prior knowledge
 
 ## Objective
 
-
-I chose this project because I am a hobby baker and throwing together a dough before sleep to let it proof overnight is great but I've noticed that it’s usually very inconsistent and I felt it could improve and this felt like a reasonable project scope for me to learn IoT with.
+I chose this project because I'm a hobby baker and throwing together a dough before sleep to let it proof overnight is great but I've noticed that it’s usually very inconsistent and I felt it could improve, also this felt like a reasonable project scope for me to learn IoT with.
 
 The device is intended to assist a hobby baker with readings and recommendations helping them make better decisions around their bread proofing environment and hopefully help them stop over or under proofing their doughs. The device is clumsy and would need some further development especially some form of protection 
-
-
 
 ## Materials
 
@@ -32,7 +30,6 @@ Materials used during the project:
 | <img src="images/USB.png"  height="150">    | USB-cable  Male to Female    | [Link](https://www.electrokit.com/usb-kabel-a-hane-micro-b-5p-hane-1.8m)                                | 39         |
 
 ## Computer Setup
-
 
 1. ### Flash the Raspberry Pi Pico WH.
    - Make sure your Raspberry Pi Pico WH is not connected to your computer.
@@ -72,6 +69,8 @@ The DHT11 sensor is extended with M2F cables so it can be placed inside the proo
 Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use
 
 ## platform
+
+I decided to use [Adafruit IO](https://learn.adafruit.com/adafruit-io-basics-feeds), it’s a free and simple cloud service. The reason for choosing it was that I wanted to send myself the recommended proof time and I noticed that sending a webhook message through Adafruit was a feature, it also seemed to have quite a simple but easy to use statistical presentation. In hindsight I would have liked to try Ubidots instead as while it looks a bit more complex it also seems to have better customisation, something I felt Adafruit was lacking as I could not get my dashboard to look especially appealing. In future I might move to Ubidots but I would have to change my current MQTT based protocol to an API for data transfer.
 
 ## Code
 
