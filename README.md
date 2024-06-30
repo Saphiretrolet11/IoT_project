@@ -257,10 +257,6 @@ The data is published to Adafruit and saved every 20 seconds while the device is
 <p align="center">
   Message on Discord both on PC and Mobile
 </p>
-<p>
-  <br>
- </br>
-</p>
 
 ## Finalizing The Design
 
