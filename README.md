@@ -279,6 +279,7 @@ The major upgrades i would do in the future is:
   <br>
  </br>
 </p>
+
 ![Device in use](images/IBRUK.jpg)
 
 The final product.
