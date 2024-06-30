@@ -12,7 +12,9 @@ The time to create this project is probably around 8-12 hours depending on prior
 
 I chose this project because I'm a hobby baker and throwing together a dough before sleep to let it proof overnight is great but I've noticed that it’s usually very inconsistent and I felt it could improve, also this felt like a reasonable project scope for me to learn IoT with.
 
-The device is intended to assist a hobby baker with readings and recommendations helping them make better decisions around their bread proofing environment and hopefully help them stop over or under proofing their doughs. The device is clumsy and would need some further development especially some form of protection 
+The device is intended to assist a hobby baker with readings and recommendations helping them make better decisions around their bread proofing environment and hopefully help them stop over or under proofing their doughs. The device is clumsy and would need some further development especially some form of protection.
+
+Note! This device will recommend a proofing time depending on temperature and the amount of yeast you use in grams. This is done for ease of use and currently assuming a standard around 400-600g flour. A more correct way would also require input for other ingredients like flour, water and salt to give a totally accurate reading.
 
 ## Materials
 
