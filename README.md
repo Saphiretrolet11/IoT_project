@@ -76,7 +76,7 @@ you can press [here](https://learn.adafruit.com/adafruit-io-basics-feeds).
 In hindsight I would have liked to try Ubidots instead as while it looks a bit more complex it also seems to have better customisation, something I felt Adafruit was lacking as I could not get my dashboard to look especially appealing. In future I might move to Ubidots but I would have to change my current MQTT based protocol to an API for data transfer.
 
 ## Code
-
+### File Structure
 - `boot.py` can be empty for this project
 - `main.py` handles sensor readings, calculations and sends data.
 - `mqtt.py` [MQTT library](https://github.com/MartinKarlsson1337/iot-bike/blob/main/lib/mqtt.py) used for the communication between devices.
