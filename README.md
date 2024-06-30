@@ -1,12 +1,12 @@
-Gustav Helgesson Liljedal gh222nq
+Gustav Helgesson Liljedal gh222nq (2024)
 
-# IoT_project
-IoT_project
+# Proofing Time A Bakers Assistant
 
 This is a tutorial on how to build a baking assistant where the user can see temperature and humidity, they can also tell the device how much yeast they used in their dough to get a recommended proofing time. 
+
 The temperature and humidity is monitored by a DHT11 sensor and a rotary encoder is used to assign the yeast amount. An OLED screen will in real time present the temperature, humidity and yeast amount in grams with conversion for both fresh and dry yeast. The software will calculate a recommended proofing time and publish information to Adafruit through a MQTT protocol where the information is presented on a dashboard and the user is sent a message through discord.
 
-The time to create this project is probably around 8-12 hours depending on prior knowledge
+The time to create this project is probably around 8-12 hours depending on prior knowledge.
 
 ## Objective
 
@@ -66,8 +66,8 @@ Materials used during the project:
 
 ![My diagram design](images/DIAGRAM.png)
 
-The DHT11 sensor is extended with M2F cables so it can be placed inside the proofing bowl while the rest of the device is outside protecting it form the damp and potential dough that could damage it.
-Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use. But i can arrange components however aslong as thet are correctly wired.
+The DHT11 sensor is extended with M2F cables so it can be placed inside the proofing bowl while the rest of the device is outside protecting it form the damp and away form the dough that could damage it.
+Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use. You can arrange components however you want aslong as thet are correctly wired.
 
 ## Platform
 
@@ -169,6 +169,8 @@ adjusted_val = temp_time(current_temp)
 ```
 The full code and files can be found in the PROJECT folder
 ### Extra code comments
+
+While loop problem
 
 ## Transmitting data/connectivity
 
