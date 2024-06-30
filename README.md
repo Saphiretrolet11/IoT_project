@@ -56,8 +56,8 @@ Materials used during the project:
    - You will need 3 drivers to properly use the Rotary encoder and OLED. As they are not built-in with Micropyton. 
    - Inside your project folder create a folder named exactly “lib”. 
    - Download [rotary_irq_rp2.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary_irq_rp2.py)
-   - Download [rotary.py](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
-   - Download [ssd1306.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary.py)
+   - Download [rotary.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary.py)
+   - Download [ssd1306.py](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
    - Place the downloaded files in the lib folder.
    - You now have all the prerequisite steps and can start assembly!
 
@@ -113,7 +113,7 @@ tempSensor = dht.DHT11(machine.Pin(18))
 # Set values for rotary encoder
 r = RotaryIRQ(pin_num_clk=13,
               pin_num_dt=14,
-              min_val=5, # Min value needs to be < 1 to never divide by 0 in calc
+              min_val=5, # Min value needs to be > 0 to never divide by 0 in calc
               max_val=50,
               incr=5,
               reverse=False,
@@ -121,31 +121,10 @@ r = RotaryIRQ(pin_num_clk=13,
               )
 
 ```
+Here we establish our connection with the connected devices though reading the specific pins data throughput. The rotary had to be set to specific values, the most important for later calculations is that the minimum value could not be 0 as I will use this value later in a division. Originally the minimum value and increment was 1, the problem was that it took far too much time to rotate the device before hitting max. The solution was to increase increments to 5 and the minimum value was also set to 5.
 
-```
-def calculate(T, Y):
-    Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
-    calc_min  = T / (Y * 2)   # The formula T / (Y / 100 * 2) to calc minutes
-    calc_result = calc_min / 60 # convert to hours
-    return round(calc_result)
+The max value was set to 50 as a standard yeast cube is 50 grams and I personally never bake batches larger than one yeast cube. It should be noted that the way later calculations are done, increasing the max value beyond 50 would break how it works and a new way of calculating would need to be developed.
 
-T = adjusted_val # The time based on temperature
-Y = r.value() # The rotary encoder value for setting yeast ammount
-calc_result = calculate(T, Y)
-```
-
-```
-def update_display(r, display):
-    temp_val,humidity_val = read_temp() #Get temperature and humidity from sensor
-    display.fill(0)
-    rot_val = r.value()
-    dry_val = round(rot_val / 4.2) # simple yeast cube to dry yeast conversion(yeast cube expected in calcs this is only for user conveniance)
-    display.text("Temp {}C H {}%" .format(temp_val, humidity_val) , 2, 8) # Display on the screen, first row
-    display.text("Cube {}g Dry {}g" .format(rot_val, dry_val) , 2, 20) # Display on the screen, secound row
-    display.show()  # Refresh the display
-
-update_display(r, display)
-```
 
 ```
 def temp_time (temprature_min):
@@ -167,10 +146,59 @@ current_temp = temprature
 # current_temp = 2
 adjusted_val = temp_time(current_temp)
 ```
-The full code and files can be found in the PROJECT folder
+This code checks the temperature and assigns a value depending on where it is sorted, this value is an approximate prooting time ignoring the amount of yeast the dough actually contains.
+
+This is the least elegant part of the code, one can imagine a better system where you use a logarithmic scale to properly establish proofing times and get a time perfect for all temperatures instead of grouping them together. But I am neither a professional baker or a proficient mathematician so this is my crude solution.
+
+```
+def calculate(T, Y):
+    Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
+    calc_min  = T / (Y * 2)   # The formula T / (Y / 100 * 2) to calc minutes
+    calc_result = calc_min / 60 # convert to hours
+    return round(calc_result)
+
+T = adjusted_val # The time based on temperature
+Y = r.value() # The rotary encoder value for setting yeast ammount
+calc_result = calculate(T, Y)
+```
+Here is the calculation that recalculates the temperature recommended time to include the yeast value, i was unable to find a good source that has a formula containing temperature, time and yeast percentage and had to figure one out by myself, in the end i made this simple formula:
+
+```
+Y = Yeast value selected by user
+T = Recommended time from the earlier function
+R = Recommended time with yeast considered in minutes
+
+Y/100
+T/(Yx2) = R
+
+R/60
+```
+
+T is originally set as a appropriate time for a fully yeasted dough
+Y is a value between 5-50 we divide it to make the value into a decimal 
+Y is multiplied by 2 so that we have a range between 0.1 and 100
+
+This gives us a function that increases the recommended time if yeast is lower 
+Or keeps it the same if you use 50g
+
+```
+def update_display(r, display):
+    temp_val,humidity_val = read_temp() #Get temperature and humidity from sensor
+    display.fill(0)
+    rot_val = r.value()
+    dry_val = round(rot_val / 4.2) # simple yeast cube to dry yeast conversion(yeast cube expected in calcs this is only for user conveniance)
+    display.text("Temp {}C H {}%" .format(temp_val, humidity_val) , 2, 8) # Display on the screen, first row
+    display.text("Cube {}g Dry {}g" .format(rot_val, dry_val) , 2, 20) # Display on the screen, secound row
+    display.show()  # Refresh the display
+
+update_display(r, display)
+```
+
 ### Extra code comments
 
 While loop problem
+
+The full code and files can be found in the PROJECT folder
 
 ## Transmitting data/connectivity
 
@@ -187,11 +215,11 @@ lorawan could be interesting to use as it requires less power and a much further
 The temperature and humidity data from the DHT11 is displayed on an OLED screen together with the user's selected yeast amount. This data is updated every 1 second. This loop felt like a good middle point where it didn't feel unnecessarily fast while still working well with using the rotary encoder to choose a yeast value.
 The data is published to Adafruit and saved every 20 seconds while the device is powered, each feed stores data for 30 days. The feeds supply a line graph, a gauge, an info stream and a regular text box to present the user with data.
 
+
 <p align="center">
   <img src="images/MSG.png" >
 </p>
 
-![Discord Message](images/MSG.png)
 
 ## Finalizing the design
 
@@ -201,5 +229,6 @@ The major upgrades i would do in the future is:
  - Create a start button so that the sequence only starts on a click from the encoder .
  - Place the device in some case to protect it from the elements.
  - Change cloud service to something that allows for more UI customization.
+ - The set of calulations to get a recomended proof time would be changed so it can handle different scales.
 
 #Bild i bruk
