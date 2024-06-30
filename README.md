@@ -275,6 +275,10 @@ The major upgrades i would do in the future is:
  - Change cloud service to something that allows for more UI customization.
  - The set of calulations to get a recomended proof time would be changed so it can handle different scales.
 
+<p>
+  <br>
+ </br>
+</p>
 ![Device in use](images/IBRUK.jpg)
 
 The final product.
