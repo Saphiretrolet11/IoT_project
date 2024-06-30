@@ -244,7 +244,7 @@ The data is published to Adafruit and saved every 20 seconds while the device is
 
 <p align="center">
   <img src="images/MSG.png" >
-  <img src="images/IMOBIL.jpg"  height="150" >
+  <img src="images/IMOBIL.jpg"  height="350" >
 </p>
 
 
