@@ -53,7 +53,7 @@ Materials used during the project:
    - You are now ready to begin!.
 
  ### 3. Download necessary Drivers.
-   - You will need 3 drivers to properly use the Rotary encoder and OLED. 
+   - You will need 3 drivers to properly use the Rotary encoder and OLED. As they are not built-in with Micropyton. 
    - Inside your project folder create a folder named exactly “lib”. 
    - Download [rotary_irq_rp2.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary_irq_rp2.py)
    - Download [rotary.py](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
@@ -69,7 +69,7 @@ Materials used during the project:
 The DHT11 sensor is extended with M2F cables so it can be placed inside the proofing bowl while the rest of the device is outside protecting it form the damp and potential dough that could damage it.
 Rotary encoder extended with M2F cables due to the pins direction pointing the rotary towards the board and making it akward to use. But i can arrange components however aslong as thet are correctly wired.
 
-## platform
+## Platform
 
 I decided to use [Adafruit IO](https://io.adafruit.com/), it’s a free and simple cloud service. The reason for choosing it was that I wanted to send myself the recommended proof time and I noticed that sending a webhook message through Adafruit was a feature, it also seemed to have quite a simple but easy to use statistical presentation. To learn more about Adafruit set-up
 you can press [here](https://learn.adafruit.com/adafruit-io-basics-feeds).
@@ -89,6 +89,21 @@ In hindsight I would have liked to try Ubidots instead as while it looks a bit m
 - - `rotary.py` main rotary driver
 - - `ssd1306.py` driver for controling the OLED display
 
+### Imports
+```
+import time                   # Allows use of time.sleep() for delays
+from mqtt import MQTTClient   # For use of MQTT protocol to talk to Adafruit IO
+import machine                # Interfaces with hardware components
+from machine import Pin       # Define pin
+import keys                   # Contain all keys used here
+import wifiConnection         # Contains functions to connect/disconnect from WiFi 
+from rotary_irq_rp2 import RotaryIRQ # Import Rotary functions
+from machine import I2C, Pin         # Import information from I2C Pin
+from ssd1306 import SSD1306_I2C      # Import Screen functionalities
+import dht                           # Import Thermometer and Humidity sensor funcions
+
+```
+
 ```
 def calculate(T, Y):
     Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
@@ -100,7 +115,7 @@ T = adjusted_val # The time based on temperature
 Y = r.value() # The rotary encoder value for setting yeast ammount
 calc_result = calculate(T, Y)
 ```
-qweqwe
+
 ```
 def update_display(r, display):
     temp_val,humidity_val = read_temp() #Get temperature and humidity from sensor
