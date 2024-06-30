@@ -264,6 +264,12 @@ The data is published to Adafruit and saved every 20 seconds while the device is
 
 ## Finalizing The Design
 
+<img align="left" width="200" src="https://www.rd.com/wp-content/uploads/2018/02/25_Hilarious-Photos-that-Will-Get-You-Through-the-Week_280228817_Doty911.jpg" />
+
+# Headline 
+
+Some text
+
 This was my first foray into IoT, and I consider this project more of a learning tool rather than something I'm going to use daily, but it was fun to work with a topic I enjoy. I have created something that, with more work, could be genuinely useful. I've gained a lot of knowledge around circuitry and this was my first time using python which i've come to appreciate (atleast over java). 
 
 The major upgrades i would do in the future is:
