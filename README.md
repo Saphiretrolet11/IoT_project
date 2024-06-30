@@ -44,8 +44,8 @@ Materials used during the project:
    - The device should disconnect and not reappear as a storage device.
 
 2. ### Install IDE and Extensions.
-   - Install VScode !!LINK.
-   - Install Node.js !!LINK.
+   - Install [Node.js](https://nodejs.org/en/download/package-manager/current)
+   - Install [VScode](https://code.visualstudio.com/download)
    - Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
    - The Pymakr extension should now be on the left bar, go to it and click on create project.
    - Create a folder (you can name it whatever) and click use this folder.
@@ -53,7 +53,6 @@ Materials used during the project:
    - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
    - Go back to the Pymakr extension, click on “add devices”, and select your device .
    - You are now ready to begin!.
-
 
 2. ### Download necessary Drivers.
    - You will need 3 drivers to properly use the Rotary encoder and OLED. 
