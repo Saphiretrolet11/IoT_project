@@ -105,6 +105,24 @@ import dht                           # Import Thermometer and Humidity sensor fu
 ```
 
 ```
+# Establish connection for LED, Temp sensor and Rotary encoder
+i2c = I2C(0,sda=Pin(16), scl=Pin(17))
+display = SSD1306_I2C(128, 32, i2c)
+tempSensor = dht.DHT11(machine.Pin(18))
+
+# Set values for rotary encoder
+r = RotaryIRQ(pin_num_clk=13,
+              pin_num_dt=14,
+              min_val=5, # Min value needs to be < 1 to never divide by 0 in calc
+              max_val=50,
+              incr=5,
+              reverse=False,
+              range_mode=RotaryIRQ.RANGE_BOUNDED
+              )
+
+```
+
+```
 def calculate(T, Y):
     Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
     calc_min  = T / (Y * 2)   # The formula T / (Y / 100 * 2) to calc minutes
@@ -128,7 +146,6 @@ def update_display(r, display):
 
 update_display(r, display)
 ```
-qweqweqw
 
 ```
 def temp_time (temprature_min):
@@ -150,15 +167,17 @@ current_temp = temprature
 # current_temp = 2
 adjusted_val = temp_time(current_temp)
 ```
-qweqwe
-
-# Display function show selected yeast and temp/humid
+The full code and files can be found in the PROJECT folder
+### Extra code comments
 
 ## Transmitting data/connectivity
 
-Wifi over lorawan
-I decided to use wifi since i had no real usecase outide of my home kitchen and as wifi is readely avalible 
-lorawan could be interesting to use as it requires less power and a much further range it could allow for some outdoor usage in perhaps a camping/mobile home senario if the device was protected in a case.
+Data transmission is through Wi-Fii using MQTT protocol, the data is sent to Adafruit every 20 seconds while the device is on. 20 seconds felt like an appropriate timer for accurate data while not throttling data due to having too many data points.
+
+Adafruit has 2 actions to send a webhook message to a discord server. It will send a message every 30 minutes if the values have changed, this is to ensure that if the climate has changed for instance if you place your proofing bowl in the fridge it will recommend a new time.
+
+Wi-Fi felt like the correct choice since i had no real use case outside of my home kitchen and as Wi-Fi is readily available it came with no extra cost
+lorawan could be interesting to use as it requires less power and a much further range it could allow for some outdoor usage in perhaps a camping/mobile home scenario if the device was protected in a case.
 
 ## Presenting data
 
