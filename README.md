@@ -173,10 +173,10 @@ T/(Yx2) = R
 
 R/60
 ```
-
-T is originally set as a appropriate time for a fully yeasted dough
-Y is a value between 5-50 we divide it to make the value into a decimal 
-Y is multiplied by 2 so that we have a range between 0.1 and 100
+R is divided by 60 to convert minutes to hours.
+T is originally set as a appropriate time for a fully yeasted dough.
+Y is a value between 5-50 we divide it to make the value into a decimal.
+Y is multiplied by 2 so that we have a range between 0.1 and 100.
 
 This gives us a function that increases the recommended time if yeast is lower 
 Or keeps it the same if you use 50g
@@ -193,12 +193,31 @@ def update_display(r, display):
 
 update_display(r, display)
 ```
+Function displays all information on the OLED its quite standard calling other functions to get new information displaying that information and updating. 
+
+I decided to make a last minute edition that who the conversion rate between fresh yeast and dry yeast so if you're baking with dry yeast you don't have to do any math a fresh cube weights 50g and a packet of dry 12g 50/12 is around 4.2, 50/4.2 is going to create a lot of decimals och i used the round function to keep it to whole numbers.
+
+```
+    while 1:              # Repeat this loop forever
+
+        if time.time() % 20 == 0:  # A separate timer to send data as to not get throtteled 
+            send_values()     # Sen values in loop
+
+        calc_result = calculate(T, Y) # 
+        Y = r.value() #Update the Rotary value 
+        update_display(r, display) # Update display in loop
+        client.check_msg() # Action a message if one is received. Non-blocking.
+        time.sleep(1) # Timer for loop kept low so as to not particurally affect rotary feel
+```
+The main loop calling all functions, a problem in the early development was that the rotary encoder was in conflict with the sending of values as a rotary encoder wants to update regularly while sending data to regularly would throttle my Adafruit services. 
+
+In the end I figured out a way to create a separate timer for the data publishing while keeping the rest of the loop going. In further development I would probably change this away from a constant loop, and set a trigger (like pressing the encoder button) and a timer to keep it active during the proofing.
 
 ### Extra code comments
 
 While loop problem
 
-The full code and files can be found in the PROJECT folder
+The full code and files can be found in this repository
 
 ## Transmitting data/connectivity
 
