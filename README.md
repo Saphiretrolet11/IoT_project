@@ -277,3 +277,6 @@ The major upgrades i would do in the future is:
 
 ![Device in use](images/IBRUK.jpg)
 
+The final product.
+
+Hope you enjoyed reading MvH GHL!
