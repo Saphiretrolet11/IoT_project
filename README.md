@@ -45,14 +45,16 @@ Materials used during the project:
    - Install [VScode](https://code.visualstudio.com/download)
    - Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
    - The Pymakr extension should now be on the left bar, go to it and click on create project.
+   - 
      ![pymaker position](images/PYMAKR.png)
+     
    - Create a folder (you can name it whatever) and click use this folder.
    - A window will ask for a project name (you can name it whatever you want).
    - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
    - Go back to the Pymakr extension, click on “add devices”, and select your device .
    - You are now ready to begin!.
 
- ### 3. Download necessary Drivers.
+ ### 3. Download Necessary Drivers.
    - You will need 3 drivers to properly use the Rotary encoder and OLED. As they are not built-in with Micropyton. 
    - Inside your project folder create a folder named exactly “lib”. 
    - Download [rotary_irq_rp2.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary_irq_rp2.py)
@@ -62,7 +64,7 @@ Materials used during the project:
    - You now have all the prerequisite steps and can start assembly!
 
 
-## Putting everything together
+## Putting Everything Together
 
 ![My diagram design](images/DIAGRAM.png)
 
@@ -103,7 +105,7 @@ from ssd1306 import SSD1306_I2C      # Import Screen functionalities
 import dht                           # Import Thermometer and Humidity sensor funcions
 
 ```
-
+ ### The Main Code
 ```
 # Establish connection for LED, Temp sensor and Rotary encoder
 i2c = I2C(0,sda=Pin(16), scl=Pin(17))
@@ -161,7 +163,7 @@ T = adjusted_val # The time based on temperature
 Y = r.value() # The rotary encoder value for setting yeast ammount
 calc_result = calculate(T, Y)
 ```
-Here is the calculation that recalculates the temperature recommended time to include the yeast value, i was unable to find a good source that has a formula containing temperature, time and yeast percentage and had to figure one out by myself, in the end i made this simple formula:
+Here is the calculation that recalculates the temperature recommended time to include the yeast value, I was unable to find a good source that has a formula containing temperature, time and yeast percentage and had to figure one out by myself, in the end i made this simple formula:
 
 ```
 Y = Yeast value selected by user
@@ -170,7 +172,6 @@ R = Recommended time with yeast considered in minutes
 
 Y/100
 T/(Yx2) = R
-
 R/60
 ```
 R is divided by 60 to convert minutes to hours.
@@ -213,36 +214,32 @@ The main loop calling all functions, a problem in the early development was that
 
 In the end I figured out a way to create a separate timer for the data publishing while keeping the rest of the loop going. In further development I would probably change this away from a constant loop, and set a trigger (like pressing the encoder button) and a timer to keep it active during the proofing.
 
-### Extra code comments
-
-While loop problem
+### Full Code
 
 The full code and files can be found in this repository
 
-## Transmitting data/connectivity
+## Transmitting Data, Connectivity
 
 Data transmission is through Wi-Fii using MQTT protocol, the data is sent to Adafruit every 20 seconds while the device is on. 20 seconds felt like an appropriate timer for accurate data while not throttling data due to having too many data points.
 
 Adafruit has 2 actions to send a webhook message to a discord server. It will send a message every 30 minutes if the values have changed, this is to ensure that if the climate has changed for instance if you place your proofing bowl in the fridge it will recommend a new time.
 
-Wi-Fi felt like the correct choice since i had no real use case outside of my home kitchen and as Wi-Fi is readily available it came with no extra cost
-lorawan could be interesting to use as it requires less power and a much further range it could allow for some outdoor usage in perhaps a camping/mobile home scenario if the device was protected in a case.
+Wi-Fi felt like the correct choice since i had no real use case outside of my home kitchen and as Wi-Fi is readily available it came with no extra cost.
+LoRaWAN could be interesting to use as it requires less power and a much further range it could allow for some outdoor usage in perhaps a camping/mobile home scenario if the device was protected in a case. Another problem with LoRaWAn is that I am to far away from a gateway I could have subscribed to Helium but it felt like above and beyond what i required and i decided against it.
 
-## Presenting data
+## Presenting Data
 ![Dashboard Design](images/DASHBOARD1.png)
 
 The temperature and humidity data from the DHT11 is displayed on an OLED screen together with the user's selected yeast amount. This data is updated every 1 second. This loop felt like a good middle point where it didn't feel unnecessarily fast while still working well with using the rotary encoder to choose a yeast value.
 The data is published to Adafruit and saved every 20 seconds while the device is powered, each feed stores data for 30 days. The feeds supply a line graph, a gauge, an info stream and a regular text box to present the user with data.
 
-
 <p align="center">
   <img src="images/MSG.png" >
 </p>
 
+## Finalizing The Design
 
-## Finalizing the design
-
-This was my first foray into IoT, and I consider this project more of a learning tool rather than something I'm going to use daily, but it was fun to work with a topic I enjoy. I have created something that, with more work, could be genuinely useful. 
+This was my first foray into IoT, and I consider this project more of a learning tool rather than something I'm going to use daily, but it was fun to work with a topic I enjoy. I have created something that, with more work, could be genuinely useful. I've gained a lot of knowledge around circuitry and this was my first time using python which i've come to appreciate (atleast over java). 
 
 The major upgrades i would do in the future is:
  - Create a start button so that the sequence only starts on a click from the encoder .
