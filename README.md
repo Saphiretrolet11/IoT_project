@@ -85,9 +85,9 @@ In hindsight I would have liked to try Ubidots instead as while it looks a bit m
 - `keys.py` manages credantials and feed information
   
 - `lib folder` containing:
-- - `rotary_irq_rp2.py` driver helping reading the rotary encoder.
-- - `rotary.py` main rotary driver
-- - `ssd1306.py` driver for controling the OLED display
+  - `rotary_irq_rp2.py` driver helping reading the rotary encoder.
+  - `rotary.py` main rotary driver
+  - `ssd1306.py` driver for controling the OLED display
 
 ### Imports
 ```
