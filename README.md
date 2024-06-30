@@ -3,10 +3,18 @@ Gustav Helgesson Liljedal gh222nq
 # IoT_project
 IoT_project
 
-project overview
-time to do
+This is a tutorial on how to build a baking assistant where the user can see temperature and humidity, they can also tell the device how much yeast they used in their dough to get a recommended proofing time. The temperature and humidity is monitored by a DHT11 sensor and a rotary encoder is used to assign the yeast amount. An OLED screen will in real time present the temperature, humidity and yeast amount in grams with conversion for both fresh and dry yeast. The software will calculate a recommended proofing time and publish information to Adafruit through a MQTT protocol where the information is presented on a dashboard and the user is sent a message through discord.
+
+The time to create this project is probably around 8-12 hours depending on prior knowledge
 
 ## Objective
+
+
+I chose this project because I am a hobby baker and throwing together a dough before sleep to let it proof overnight is great but I've noticed that it’s usually very inconsistent and I felt it could improve and this felt like a reasonable project scope for me to learn IoT with.
+
+The device is intended to assist a hobby baker with readings and recommendations helping them make better decisions around their bread proofing environment and hopefully help them stop over or under proofing their doughs. The device is clumsy and would need some further development especially some form of protection 
+
+
 
 ## Materials
 
@@ -24,6 +32,37 @@ Materials used during the project:
 | <img src="images/USB.png"  height="150">    | USB-cable  Male to Female    | [Link](https://www.electrokit.com/usb-kabel-a-hane-micro-b-5p-hane-1.8m)                                | 39         |
 
 ## Computer Setup
+
+
+### 1. Updating Hardware
+Make sure your Raspberry Pi Pico WH is not connected to your computer.
+Download the MicroPython firmware (.uf2 file) for Raspberry Pi Pico from !!LINK.
+Hold down the BOOTSEL button on your Raspberry Pi Pico WH.
+While holding BOOTSEL, connect the Pico Wh to your computer with a USB cable.
+The Raspberry Pi Pico WH will appear as a storage device on your computer.
+Place the firmware you downloaded (.uf2 file) in the Raspberry Pi Pico WH .
+The device should disconnect and not reappear as a storage device.
+
+
+Install VScode !!LINK.
+Install Node.js !!LINK.
+Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
+The Pymakr extension should now be on the left bar, go to it and click on create project.
+Create a folder (you can name it whatever) and click use this folder.
+A window will ask for a project name (you can name it whatever you want).
+Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
+Go back to the Pymakr extension, click on “add devices”, and select your device .
+You are now ready to begin!.
+
+
+
+You will need 3 drivers to properly use the Rotary encoder and OLED 
+Inside your project folder create a folder named exactly “lib” 
+Download rotary_irq_rp2 !!LINK
+Download rotary.py !!LINK
+Download ssd1306.py !!LINK
+You now have all the prerequisite steps and can start assembly!
+
 
 ## C
 ## Putting everything together
