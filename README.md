@@ -59,8 +59,8 @@ Materials used during the project:
    - You will need 3 drivers to properly use the Rotary encoder and OLED. 
    - Inside your project folder create a folder named exactly “lib”. 
    - Download [rotary_irq_rp2.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary_irq_rp2.py)
-   - Download [rotary.py]  (https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
-   - Download [ssd1306.py]  (https://github.com/miketeachman/micropython-rotary/blob/master/rotary.py)
+   - Download [rotary.py](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
+   - Download [ssd1306.py](https://github.com/miketeachman/micropython-rotary/blob/master/rotary.py)
    - Place the downloaded files in the lib folder.
    - You now have all the prerequisite steps and can start assembly!
 
