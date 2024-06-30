@@ -182,5 +182,10 @@ Wi-Fi felt like the correct choice since i had no real use case outside of my ho
 lorawan could be interesting to use as it requires less power and a much further range it could allow for some outdoor usage in perhaps a camping/mobile home scenario if the device was protected in a case.
 
 ## Presenting data
+![Dashboard Design](images/DASHBOARD1.png)
+
+The temperature and humidity data from the DHT11 is displayed on an OLED screen together with the user's selected yeast amount. This data is updated every 1 second. The 1 second loop felt like a good middle point where it didn't feel unnecessarily fast while still working well with using the rotary encoder to choose a yeast value.
+The data is published to Adafruit and saved every 20 seconds while the device is powered, each feed stores data for 30 days. The feeds supply a line graph, a gauge, an info stream and a regular text box to present the user with data.
+
 
 ## Finalizing the design
