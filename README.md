@@ -33,6 +33,13 @@ Materials used during the project:
 
 ## Computer Setup
 
+1. **Flash the MicroPython firmware onto the Raspberry Pi Pico WH.**
+
+   - Download the latest MicroPython firmware for Raspberry Pi Pico from the official [website](https://micropython.org/download/rp2-pico-w/).
+   - Press and hold the BOOTSEL button on the Raspberry Pi Pico WH.
+   - While holding the BOOTSEL button, connect the Raspberry Pi Pico WH to your computer using a USB cable.
+   - The Raspberry Pi Pico WH will now appear as a mass storage device on your computer.
+   - Copy the downloaded firmware (.uf2 file) and paste it into the mass storage device (Raspberry Pi Pico WH).
 
 ### 1. Updating Hardware
   - Make sure your Raspberry Pi Pico WH is not connected to your computer.
