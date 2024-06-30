@@ -184,8 +184,18 @@ lorawan could be interesting to use as it requires less power and a much further
 ## Presenting data
 ![Dashboard Design](images/DASHBOARD1.png)
 
-The temperature and humidity data from the DHT11 is displayed on an OLED screen together with the user's selected yeast amount. This data is updated every 1 second. The 1 second loop felt like a good middle point where it didn't feel unnecessarily fast while still working well with using the rotary encoder to choose a yeast value.
+The temperature and humidity data from the DHT11 is displayed on an OLED screen together with the user's selected yeast amount. This data is updated every 1 second. This loop felt like a good middle point where it didn't feel unnecessarily fast while still working well with using the rotary encoder to choose a yeast value.
 The data is published to Adafruit and saved every 20 seconds while the device is powered, each feed stores data for 30 days. The feeds supply a line graph, a gauge, an info stream and a regular text box to present the user with data.
 
+![Discord Message](images/MSG.png)
 
 ## Finalizing the design
+
+This was my first foray into IoT, and I consider this project more of a learning tool rather than something I'm going to use daily, but it was fun to work with a topic I enjoy. I have created something that, with more work, could be genuinely useful. 
+
+The major upgrades i would do in the future is:
+ - Create a start button so that the sequence only starts on a click from the encoder .
+ - Place the device in some case to protect it from the elements.
+ - Change cloud service to something that allows for more UI customization.
+
+#Bild i bruk
