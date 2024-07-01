@@ -58,7 +58,10 @@ You don't necessarily need a power bank, this is to power the device while it is
    - Create a folder (you can name it whatever) and click use this folder.
    - A window will ask for a project name (you can name it whatever you want).
    - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
-   - Go back to the Pymakr extension, click on “add devices”, and select your device .
+   - Make sure your Pico WH is connected to your PC using USB.
+   - Go back to the Pymakr extension, click on “add devices”, and select your device.
+   - Click the lightning icon.
+   - Click the Start Development Mode to upload your code to the Pico WH (it will be updated everytime you save your code).
    - You are now ready to begin!.
 
  ### 3. Download Necessary Drivers.
@@ -69,6 +72,8 @@ You don't necessarily need a power bank, this is to power the device while it is
    - Download [ssd1306.py](https://github.com/stlehmann/micropython-ssd1306/blob/master/ssd1306.py)
    - Place the downloaded files in the lib folder.
    - You now have all the prerequisite steps and can start assembly!
+
+
 
 
 ## Putting Everything Together
