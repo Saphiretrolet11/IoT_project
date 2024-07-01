@@ -60,6 +60,8 @@ You don't necessarily need a power bank, this is to power the device while it is
    - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
    - Make sure your Pico WH is connected to your PC using USB.
    - Go back to the Pymakr extension, click on “add devices”, and select your device.
+   - Click the lightning icon. It apprears when you hover over your device's name.
+   - Click the Start Development Mode button to start uploading your code to the Pico WH (it will be updated everytime you save your code).  It apprears when you hover over your project name.
    - You are now ready to begin!.
 
  ### 3. Download Necessary Drivers.
