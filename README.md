@@ -99,7 +99,7 @@ In hindsight I would have liked to try Ubidots instead as while it looks a bit m
   - `ssd1306.py` driver for controling the OLED display
 
 ### Imports
-```
+```python
 import time                   # Allows use of time.sleep() for delays
 from mqtt import MQTTClient   # For use of MQTT protocol to talk to Adafruit IO
 import machine                # Interfaces with hardware components
@@ -113,7 +113,7 @@ import dht                           # Import Thermometer and Humidity sensor fu
 
 ```
  ### The Main Code
-```
+```python
 # Establish connection for LED, Temp sensor and Rotary encoder
 i2c = I2C(0,sda=Pin(16), scl=Pin(17))
 display = SSD1306_I2C(128, 32, i2c)
@@ -136,7 +136,7 @@ The max value was set to 50 as a standard yeast cube is 50 grams and I personall
 
 
 
-```
+```python
 def temp_time (temprature_min):
     if temprature_min < 0:
         value = 1
@@ -160,7 +160,7 @@ This code checks the temperature and assigns a value depending on where it is so
 
 This is the least elegant part of the code, one can imagine a better system where you use a logarithmic scale to properly establish proofing times and get a time perfect for all temperatures instead of grouping them together. But I am neither a professional baker or a proficient mathematician so this is my crude solution.
 
-```
+```python
 def calculate(T, Y):
     Y = Y / 100  # Divide rotary encoder value lowest is 1 highest is 50 so make it into decimals for easier calcs
     calc_min  = T / (Y * 2)   # The formula T / (Y / 100 * 2) to calc minutes
@@ -190,7 +190,7 @@ Y is multiplied by 2 so that we have a range between 0.1 and 100.
 This gives us a function that increases the recommended time if yeast is lower 
 Or keeps it the same if you use 50g
 
-```
+```python
 def update_display(r, display):
     temp_val,humidity_val = read_temp() #Get temperature and humidity from sensor
     display.fill(0)
@@ -209,7 +209,7 @@ Function displays all information on the OLED its quite standard calling other f
 
 I decided to make a last minute edition that who the conversion rate between fresh yeast and dry yeast so if you're baking with dry yeast you don't have to do any math a fresh cube weights 50g and a packet of dry 12g 50/12 is around 4.2, 50/4.2 is going to create a lot of decimals och i used the round function to keep it to whole numbers.
 
-```
+```python
     while 1:              # Repeat this loop forever
 
         if time.time() % 20 == 0:  # A separate timer to send data as to not get throtteled 
