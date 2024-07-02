@@ -52,9 +52,7 @@ You don't necessarily need a power bank, this is to power the device while it is
    - Install [VScode](https://code.visualstudio.com/download)
    - Start VScode to the extensions tab on the left hand bar and search for Pymakr, install it.
    - The Pymakr extension should now be on the left bar, go to it and click on create project.
-     
      ![pymaker position](images/PYMAKR.png)
-     
    - Create a folder (you can name it whatever) and click use this folder.
    - A window will ask for a project name (you can name it whatever you want).
    - Go to the Explorer tab on the left hand bar, click “open folder” and select your project folder.
